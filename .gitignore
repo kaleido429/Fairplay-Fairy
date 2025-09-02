@@ -29,3 +29,11 @@ yarn-error.log*
 
 #Firebase Admin SDK
 serviceAccountKey.json
+
+# image, video files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.mp4
+*.webm
