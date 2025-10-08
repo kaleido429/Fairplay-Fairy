@@ -40,5 +40,5 @@ serviceAccountKey.json
 
 # large files
 opticalflowExcel.ipynb
-*xlsx
+*.xlsx
 *.xls
