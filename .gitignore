@@ -37,3 +37,8 @@ serviceAccountKey.json
 *.gif
 *.mp4
 *.webm
+
+# large files
+opticalflowExcel.ipynb
+*.xlsx
+*.xls
