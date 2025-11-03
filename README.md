@@ -28,7 +28,9 @@ Firebase(Storage/Firestore)
 
 ### 구성 요소와 책임
 - `Headshot_Tracker.ipynb`: Firebase 인증/초기화, 영상 다운로드, ROI/HSV 마스크로 이벤트 감지, 카운트 집계, (선택) 디버그 영상 저장
-- `optical_flow_colab.ipynb`: Farnebäck Optical Flow로 에임 이동(aim_dx, aim_dy) 시계열, 1차 특징 생성
+- `optical_flow_colab.ipynb`: Farnebäck Optical Flow로 에임 이동(aim_dx, aim_dy) 시계열, 1차 특징 생성  
+
+https://github.com/Chunsaeng20, Led AI design and modeling. Most experiments/training were conducted on Colab Pro+ so they are not directly reflected in the this Git history.   
 - `01_training_xgboost_model.ipynb`: 슬라이딩 윈도우 요약 통계(WINDOW=150, STEP=30), 상관계수(corr_*), 라벨 `cheat`, 모델 학습/저장
 - `02_model_interpretation_with_shap.ipynb`: SHAP 기반 전역/개별 해석(여러 플롯)
 
@@ -43,6 +45,11 @@ Firebase(Storage/Firestore)
 - WINDOW_SIZE=150(≈5초), STEP_SIZE=30(≈1초) → 0~149, 30~179, 60~209 …처럼 80% 겹치며 진행
 - 통계 예: mean/median/mode/range/std/IQR/max/min/skew/kurtosis/ZCR/entropy + 특징쌍 상관계수(corr_*)
 - 윈도우 개수: floor((N - WINDOW_SIZE)/STEP_SIZE) + 1
+
+## xAI를 추가한 이유
+오탐(False Positive) 대응: 무고한 유저 제재 방지  
+블랙박스 문제: AI가 정상 유저를 핵으로 오판 시, 운영팀은 "AI가 그렇게 판단했다" 외에 제재의 근거를 제시할 수 없습니다.  
+이는 법적 분쟁 및 유저 커뮤니티 신뢰도 하락의 치명적인 원인이 됩니다.  
 
 ## 보안/주의
 - `serviceAccountKey.json`은 반드시 `.gitignore`에 포함하고 커밋하지 마세요.
