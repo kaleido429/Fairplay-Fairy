@@ -30,7 +30,8 @@ Firebase(Storage/Firestore)
 - `Headshot_Tracker.ipynb`: Firebase 인증/초기화, 영상 다운로드, ROI/HSV 마스크로 이벤트 감지, 카운트 집계, (선택) 디버그 영상 저장
 - `optical_flow_colab.ipynb`: Farnebäck Optical Flow로 에임 이동(aim_dx, aim_dy) 시계열, 1차 특징 생성  
 
-https://github.com/Chunsaeng20, Led AI design and modeling. Most experiments/training were conducted on Colab Pro+ so they are not directly reflected in the this Git history.   
+https://github.com/Chunsaeng20, https://github.com/Chunsaeng20/Anti-Cheat-Model  
+Led AI design and modeling. Most experiments/training were conducted on Colab Pro+ so they are not directly reflected in the this Git history.   
 - `01_training_xgboost_model.ipynb`: 슬라이딩 윈도우 요약 통계(WINDOW=150, STEP=30), 상관계수(corr_*), 라벨 `cheat`, 모델 학습/저장
 - `02_model_interpretation_with_shap.ipynb`: SHAP 기반 전역/개별 해석(여러 플롯)
 
