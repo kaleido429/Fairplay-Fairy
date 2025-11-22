@@ -33,7 +33,7 @@ yarn-error.log*
 #IF WHO DELETES THIS LINE OR .gitignore FILE AGAIN... I QUIT!!!
 serviceAccountKey.json
 #SDK KEY IS NOT PUBLIC INFORMATION, WHY DELETE THIS LINE?
-#왜 지우는 거야? .gitignore에서 충돌나는 거 아니잖아요
+#왜 지우는 거야? .gitignore에서 충돌나는 거 아니잖아요 (ಠ_ಠ)
 
 
 # image, video files
