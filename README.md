@@ -52,6 +52,23 @@ Led AI design and modeling. Most experiments/training were conducted on Colab Pr
 블랙박스 문제: AI가 정상 유저를 핵으로 오판 시, 운영팀은 "AI가 그렇게 판단했다" 외에 제재의 근거를 제시할 수 없습니다.  
 이는 법적 분쟁 및 유저 커뮤니티 신뢰도 하락의 치명적인 원인이 됩니다.  
 
+## 재평가 및 판정 규칙 개선
+
+보고서의 "정밀도 1.00 / 재현율 0.75"는 임계값을 검증셋에서 고른 값. 영상 단위 5-fold × 10회 반복, 임계값은 학습 데이터에서만 결정하는 방식으로 재측정. 상세: [reeval/README.md](reeval/README.md)
+
+| 판정 규칙 | 재현율 (치트 25개) | 오탐률 (정상 230개) |
+|---|---|---|
+| 기존 설계 (Baseline): 윈도우 하나라도 임계값 초과 | 0.59 | 0.61% |
+| 개선안 (Improved): 영상 평균 확률 | 0.76 | 0.26% |
+
+![Baseline vs improved: recall and false positive rate](reeval/figures/summary.png)
+
+![Video score distribution under each rule](reeval/figures/score_separation.png)
+
+- 기존 설계: 윈도우 하나에 의존. 정상 유저의 순간 플릭에 취약.
+- 개선안: 영상 전체 평균으로 판정. 적발 수 증가, 오탐 감소, 분할에 따른 편차 감소.
+- 한계: 치트 영상 25개, 에임봇 1종, 녹화 환경 편향 미검증.
+
 ## 보안/주의
 - `serviceAccountKey.json`은 반드시 `.gitignore`에 포함하고 커밋하지 마세요.
 - 일부 WEBM은 FPS 메타가 비정상일 수 있어 상한/고정 로직이 포함되어 있습니다.
